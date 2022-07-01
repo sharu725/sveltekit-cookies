@@ -48,7 +48,7 @@ First set some cookie by clicking this button
   <button on:click={setCookie}>set some cookie</button>
 </div>
 
-On refresh you should see this in cookies
+On refresh you should see this in cookies.
 
 <pre>
   <code>
@@ -56,6 +56,7 @@ On refresh you should see this in cookies
   </code>
 </pre>
 
+Click this button to see the cookies in console.
 <div>
   <button on:click={doSomething}>Do something</button>
 </div>
