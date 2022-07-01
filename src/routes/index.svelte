@@ -2,7 +2,7 @@
   export const load = ({ session }) => {
     return {
       props: {
-        endpointSession: session,
+        session,
         // this has cookies we set in getSession(hooks.js)
       },
     };
@@ -14,12 +14,13 @@
   console.log($session);
   // this has cookies we set in getSession(hooks.js)
 
-  export let endpointSession;
+  let endpointSession = {};
 
   const doSomething = async () => {
     const res = await fetch("/api/get-cookies");
     const data = await res.json();
     console.log(data);
+    endpointSession = data;
     // this should have cookies returned from endpoint
   };
   const setCookie = () => {
@@ -42,21 +43,20 @@
 <p>
   Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation
 </p>
-
-First set some cookie by clicking this button
+<p>First set some cookie by clicking this button</p>
 <div>
   <button on:click={setCookie}>set some cookie</button>
 </div>
 
-On refresh you should see this in cookies.
+<p>On refresh you should see this in cookies.</p>
 
 <pre>
   <code>
-    {JSON.stringify($session, null, 2)}
+    {JSON.stringify($session?.cookies, null, 2)}
   </code>
 </pre>
 
-Click this button to see the cookies in console.
+<p>Click this button to see the cookies in console.</p>
 <div>
   <button on:click={doSomething}>Do something</button>
 </div>
@@ -66,3 +66,8 @@ Click this button to see the cookies in console.
     {JSON.stringify(endpointSession, null, 2)}
   </code>
 </pre>
+
+<p>
+  These are your browser cookies. You can check them inspect open(Ctrl+Shift+i)
+  in chrome >> navigate to Application tab to check cookies.
+</p>
