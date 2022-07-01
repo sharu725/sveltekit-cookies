@@ -1,2 +1,2 @@
 ## Access cookies in Sveltekit
-Read More - https://webjeda.com/blog/accessing-ccokies-in-sveltekit
+Read More - https://webjeda.com/blog/accessing-cookies-in-sveltekit
