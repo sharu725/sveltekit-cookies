@@ -92,6 +92,9 @@
 </button>
 
 <style>
+  button {
+    cursor: pointer;
+  }
   .btn {
     display: flex;
     place-items: center;
